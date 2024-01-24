@@ -14,8 +14,6 @@ jobs:
         run: "echo The secret ${{ secrets.MY_SECRET }}"
 
   doesnt-need-approval:
-    environment: dev
-
     runs-on: ubuntu-22.04
 
     steps:
