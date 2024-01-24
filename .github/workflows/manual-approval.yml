@@ -1,0 +1,14 @@
+name: Workflow with Approval needed
+
+on:
+  workflow_dispatch:
+
+jobs:
+  needs-approval:
+    environment: dev
+
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Use some environment secret when required reviewers for workflow run
+        run: "echo The secret ${{ secrets.MY_SECRET }}"
