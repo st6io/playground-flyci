@@ -14,8 +14,9 @@ jobs:
         run: "echo The secret ${{ secrets.MY_SECRET }}"
 
   doesnt-need-approval:
+    environment: Dev no reviewers
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Use some environment secret when required reviewers for workflow run
-        run: "echo No secret used"
+      - name: Use some environment var when no approval needed for workflow run
+        run: "echo The secret ${{ vars.MY_VAR }}"
