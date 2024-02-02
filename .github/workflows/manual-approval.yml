@@ -7,7 +7,7 @@ jobs:
   needs-approval:
     environment: dev
 
-    runs-on: ubuntu-22.04
+    runs-on: flyci-macos-large-latest-m1
 
     steps:
       - name: Use some environment secret when required reviewers for workflow run
@@ -15,13 +15,13 @@ jobs:
 
   doesnt-need-approval-refers-env:
     environment: Dev no reviewers
-    runs-on: ubuntu-22.04
+    runs-on: flyci-macos-large-latest-m1
 
     steps:
       - name: Use some environment var when no approval needed for workflow run
         run: "echo The secret ${{ vars.MY_VAR }}"
   doesnt-need-approval-doesnt-refer-env:
-    runs-on: ubuntu-22.04
+    runs-on: flyci-macos-large-latest-m1
 
     steps:
       - name: Plain step
